@@ -46,18 +46,14 @@ int knnClassifier(Predict arr[],int n, int k,Predict u){
 	//After ascending order sort........printed values of new sorted data set in the range of value of k
 	for(int i=0;i<k;i++){
 		printf("\n%d->\t%f\t%f\t%f\t%d\n",i+1,arr[i].x,arr[i].y,arr[i].euclidean_dis,arr[i].prediction);
+		if (arr[i].prediction == 0) {
+		    gr1++; 
+		}
+		else if (arr[i].prediction == 1) {
+		    gr2++; 
+		}
 	}
-	for (int i = 0; i < k; i++) 
-    { 
-        if (arr[i].prediction == 0) {
-            gr1++; 
-		}
-        else if (arr[i].prediction == 1) {
-            gr2++; 
-		}
-    } 
-  
-    return (gr1 > gr2 ? 0 : 1); 
+        return (gr1 > gr2 ? 0 : 1); 
 }
 int main() 
 { 
